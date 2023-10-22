@@ -44,21 +44,21 @@
         <div class="course">
             <div class="project-div">
                 <div class="container">
-                    <form action="" class="m-auto" style="max-width:600px">
+                    <form action="" class=" contact_form tm-auto" style="max-width:600px">
                         <h3 class="my-4">Contact Form</h3>
                         <hr class="my-4" />
                         <div class="form-group mb-3 row">
-                            <label for="your-name2" class="col-md-5 col-form-label">Your Name</label>
-                            <div class="col-md-7"><input type="text" class="form-control form-control-lg" id="your-name2" name="your-name" required></div>
+                            <label for="your-name2" class="ncol-md-5 col-form-label">Your Name</label>
+                            <div class="col-md-7"><input type="text" class="name form-control form-control-lg" id="your-name2" name="your-name" required></div>
                         </div>
                         <div class="form-group mb-3 row">
                             <label for="your-email3" class="col-md-5 col-form-label">Your Email</label>
-                            <div class="col-md-7"><input type="email" class="form-control form-control-lg" id="your-email3" name="your-email" required><small class="form-text text-muted"> Please enter a valid email address</small></div>
+                            <div class="col-md-7"><input type="email" class="email form-control form-control-lg" id="your-email3" name="your-email" required><small class="form-text text-muted"> Please enter a valid email address</small></div>
                         </div>
                         <hr class="bg-transparent border-0 py-1" />
                         <div class="form-group mb-3 row">
                             <label for="your-message6" class="col-md-5 col-form-label">Your Message</label>
-                            <div class="col-md-7"><textarea class="form-control form-control-lg" id="your-message6" name="your-message" required></textarea></div>
+                            <div class="col-md-7"><textarea class="msg form-control form-control-lg" id="your-message6" name="your-message" required></textarea></div>
                         </div>
                         <hr class="my-4" />
                         <div class="form-group mb-3 row">
@@ -71,10 +71,34 @@
         </div>
 	<div class="home">
 		<footer>
-  			<p> © Made by Vafadie @ 2023</p>
-            <p><a href="https://www.instagram.com/christianvamer/">Instagram</a></p>
-            <p><a href="https://www.facebook.com/Vamerlen"></a></p>
+  		    <p> © Made by Vafadie @ 2023</p>
+	            <p><a href="https://www.instagram.com/christianvamer/">Instagram</a></p>
+	            <p><a href="https://www.facebook.com/Vamerlen"></a></p>
 		</footer>
 	</div>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		const form = document.querySeletor('.contact_form'),
+		function sendMsg(e){
+			
+	  		const name = document.queryselector('.name'),
+	  			email = document.querySeletor('.email'),
+	  			msg = document.querySeletor('.msg');
+	
+		        
+			Email.send({
+	    		    SecureToken : "3da0036f-a071-4a23-9b83-83e386ecd56f",
+	    		    To : 'kongolovafadie@gmail.com',
+	                    From : email.value,
+	                    Subject : "Contact form",
+	                    Body : msg.value
+			}).then(
+				message => alert(message)
+			); 
+
+		},
+
+		form.addEventListener("submit", sendMsg);
+	<script>
     </body>
 </html>
