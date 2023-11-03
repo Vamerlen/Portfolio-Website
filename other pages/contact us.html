@@ -79,30 +79,38 @@
 		</div>
 
 		<script>
+		
 			function sendMail(){
-				(function(){
-					emailjs.init("xEah1M8WaZUSWb6t5");
-				})();
+   			 (function(){
+        			emailjs.init("xEah1M8WaZUSWb6t5");
+    					})();
 
-				var params = {
-					sendername: document.querySelector(".name").value,
-					to: "kongolovafadie@gmail.com",
-					sendername: document.querySelector(".email").value,
-					msg: document.querySelector(".msg").value
-					
-				};
+  				  var params = {
+			        sendername: document.querySelector(".name").value,
+       					 to: "kongolovafadie@gmail.com",
+        			sendername: document.querySelector(".email").value,
+       				 msg: document.querySelector(".msg").value
+  					  };
 
-				var serviceID = "service_o83jc9k";
-				var templateID = "template_sfrp6q7";
+    				var serviceID = "service_o83jc9k";
+			    var templateID = "template_sfrp6q7";
+ 				   var templateParams = {
+        		sendername: document.querySelector(".name").value,
+        		to: "kongolovafadie@gmail.com",
+       			 sendername: document.querySelector(".email").value,
+       			 msg: document.querySelector(".msg").value
+    			};
+   		 var publicKey = "YOUR_PUBLIC_KEY";
 
-				emailjs.send(serviceID, templateID, params)
-				.then( res => {
-						alert("Email Sent Successfully")
-				})
-				.catch {
-					
-				}
-				
+    		emailjs.send(serviceID, templateID, templateParams, publicKey)
+		    .then( res => {
+       			 alert("Email Sent Successfully")
+   			 })
+   			 .catch {
+        
+   			 }
+		}	
+	
 			}
 	
 		</script>
